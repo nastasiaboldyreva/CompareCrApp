@@ -29,7 +29,7 @@ interface ApiService {
         apiKey: String = "",
 
         @Query(QUERY_PARAM_FROM_SYMBOLS)
-        fSyms: String,
+        fSyms: String?,
 
         @Query(QUERY_PARAM_TO_SYMBOLS)
         tSyms: String = CURRENCY

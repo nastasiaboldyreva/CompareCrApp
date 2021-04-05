@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 data class CoinInfoListOfData(
 
     @SerializedName("Data")
-    var Data: List<Data>? = null
+    var data: List<Data>? = null
 
 )

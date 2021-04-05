@@ -1,14 +1,21 @@
 package com.asboldyreva.android.comparecrapp.pojo
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "full_price_list")
 data class CoinPriceInfo(
     @SerializedName("TYPE")
     var type: String?,
     @SerializedName("MARKET")
     var market: String?,
+
+    @PrimaryKey
     @SerializedName("FROMSYMBOL")
-    var fromSymbol: String?,
+    var fromSymbol: String,
+
     @SerializedName("TOSYMBOL")
     var tpSymbol: String?,
     @SerializedName("FLAGS")
