@@ -2,7 +2,8 @@ package com.asboldyreva.android.comparecrapp.pojo
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.Expose
+import com.asboldyreva.android.comparecrapp.api.ApiFactory.BASE_IMAGE_URL
+import com.asboldyreva.android.comparecrapp.utils.convertTimestampToTime
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "full_price_list")
@@ -99,3 +100,12 @@ data class CoinPriceInfo(
     @SerializedName("IMAGEURL")
     var imageUrl: String?
 )
+{
+    fun getFormattedTime(): String {
+        return convertTimestampToTime(lastUpdate)
+    }
+
+    fun getFullImageUrl(): String {
+        return BASE_IMAGE_URL + imageUrl
+    }
+}

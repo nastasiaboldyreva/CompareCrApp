@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 
-class MainActivity : AppCompatActivity() {
+class CoinPriceListMainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
 
@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProvider.AndroidViewModelFactory(application).create(CoinViewModel::class.java)
-        viewModel.loadData()
         viewModel.priceList.observe(this, Observer {
             Log.d("Loading_test", "Success in activity: $it")
         })
